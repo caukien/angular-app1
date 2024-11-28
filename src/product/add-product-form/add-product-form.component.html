@@ -1,0 +1,67 @@
+<div class="container mt-4">
+  <h2>Add New Product</h2>
+  <form>
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input
+        type="text"
+        id="productName"
+        class="form-control"
+        [(ngModel)]="product.productName"
+        name="productName"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="sold">Sold</label>
+      <input
+        type="number"
+        id="sold"
+        class="form-control"
+        [(ngModel)]="product.sold"
+        name="sold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="stock">Stock</label>
+      <input
+        type="number"
+        id="stock"
+        class="form-control"
+        [(ngModel)]="product.stock"
+        name="stock"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exp">Expiration Date</label>
+      <input
+        type="date"
+        id="exp"
+        class="form-control"
+        [(ngModel)]="product.exp"
+        name="exp"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="cateId">Category</label>
+      <select
+        id="cateId"
+        class="form-control"
+        [(ngModel)]="product.cateId"
+        name="cateId"
+        required
+      >
+        <option *ngFor="let category of cateItems" [value]="category.cateName">{{ category.cateName }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" (click)="addProduct()">Add Product</button>
+  </form>
+</div>
